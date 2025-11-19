@@ -1,0 +1,323 @@
+  
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice | Adventure Booking</title>
+  <link rel="stylesheet" href="sweetalert2.min.css">
+
+  <style>
+    /* ---------- GLOBAL ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f7f7f7;
+      padding-top: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      width: 100%;
+      background: #c62f2f;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 40px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #ffcd39;
+      text-decoration: underline;
+    }
+
+    header #l {
+      background: #fff;
+      color: #c62f2f;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    header #l:hover {
+      background: #ffcd39;
+      color: #111;
+    }
+
+    /* ---------- INVOICE MAIN ---------- */
+    h1 {
+      text-align: center;
+      color: rgb(198,47,47);
+      margin-bottom: 30px;
+    }
+
+    #m {
+      width: 90%;
+      max-width: 1000px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: rgb(198,47,47);
+      color: white;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .no-data {
+      text-align: center;
+      padding: 20px;
+      font-size: 18px;
+      color: #555;
+    }
+
+    .invoice-card {
+      display: flex;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin: 20px 0;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      background: #fff;
+    }
+
+    .invoice-left {
+      flex: 1;
+      background: #f8f8f8;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 15px;
+    }
+
+    .ad-title { font-size: 20px; font-weight: 600; }
+    .ad-desc { font-size: 14px; color: #555; }
+
+    .invoice-right {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .invoice-right h1 { font-size: 24px; margin-bottom: 15px; }
+    .personal-info, .order-info { margin-bottom: 15px; }
+
+    .invoice-buttons button {
+      background: #f0c14b;
+      border: 1px solid #a88734;
+      border-radius: 5px;
+      padding: 8px 12px;
+      margin-right: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .invoice-buttons button:hover {
+      background: #ddb347;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      width: 100%;
+      background: #c62f2f;
+      color: #fff;
+      padding: 40px 20px 20px;
+      margin-top: 50px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 220px;
+      margin: 10px 20px;
+    }
+
+    .footer-column h3 {
+      color: #ffcd39;
+      margin-bottom: 10px;
+      font-size: 18px;
+      border-bottom: 2px solid #ffcd39;
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin: 6px 0;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .footer-column a:hover {
+      color: #ffcd39;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      padding-top: 15px;
+      font-size: 14px;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media(max-width: 850px) {
+      header {
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px 20px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 6px 10px;
+        font-size: 14px;
+      }
+
+      header #l {
+        padding: 6px 12px;
+        font-size: 14px;
+      }
+
+      .invoice-card {
+        flex-direction: column;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-column {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">🌍 Go Beyond</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="selectionad.html">Adventures</a>
+      <a href="book.html">Booking</a>
+      <a href="myorders.html"> orders</a>
+      <a href="invoice.html">Invoice</a>
+    </nav>
+    <button id="l" onclick="logout()">Logout</button>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <div id="m">
+    <!-- Content generated dynamically by invoice.js -->
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <a href="home.html">Home</a>
+        <a href="adventure.html">Adventures</a>
+        <a href="book.html">Book</a>
+        <a href="invoice.html">Invoice</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact Info</h3>
+        <a href="mailto:info@gobeyond.com">📧 info@gobeyond.com</a>
+        <a href="tel:+911234567890">📞 +91 12345 67890</a>
+        <a href="#">📍 New Delhi, India</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 Go Beyond Adventures | All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- JS FILES -->
+  <script src="myorders.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="sweetalert2.all.min.js"></script>
+  <script src="sweetalert2.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #e8e8e8;
+    }
+    
+
+    /* ---------------- HEADER SECTION ---------------- */
+    #maindiv {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+        url("ji.jpg") no-repeat center/cover;
+      height: 97vh;
+      border-radius: 10px;
+      box-shadow: 5px 5px 15px rgb(0, 0, 0);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #lou{
+
+      display: none;
+    }
+    #navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      padding: 20px 0;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    #go {
+      color: beige;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    #navdiv {
+      background-color: beige;
+      height: 50px;
+      width: 360px;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    #navdiv p {
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    #navdiv p:hover {
+      background-color: #fff;
+    }
+
+    #sl button {
+      background-color: rgb(198, 47, 47);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-left: 10px;
+      border-radius: 25px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    #sl button:hover {
+      background-color: white;
+      color: black;
+    }
+
+    #divhead {
+      margin-top: 100px;
+      text-align: center;
+      color: white;
+    }
+
+    #divhead h1 {
+      font-size: 70px;
+      color: rgb(234, 205, 156);
+      line-height: 1.2;
+    }
+
+    #divhead p {
+      color: #dfe6f2;
+      margin-top: 15px;
+      font-size: 16px;
+    }
+
+    #divhead button {
+      margin-top: 25px;
+      background-color: rgb(198, 47, 47);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      border: none;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    #divhead button:hover {
+      background-color: white;
+      color: black;
+    }
+
+    /* ---------------- ADVENTURE SECTIONS ---------------- */
+    .adventure-section {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 80px 0;
+      background-color: #f9f9f9;
+      gap: 40px;
+    }
+
+    .adventure-card {
+      position: relative;
+      height: 350px;
+      width: 300px;
+      border-radius: 15px;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      transition: 0.4s;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .adventure-card:hover {
+      transform: scale(1.05);
+    }
+
+    .card-info {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      transition: 0.4s;
+      opacity: 0;
+    }
+
+    .adventure-card:hover .card-info {
+      opacity: 1;
+      bottom: 0;
+    }
+
+    .card-info h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .card-info p {
+      font-size: 14px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-top: 80px;
+      font-size: 40px;
+      color: #333;
+    }
+
+    /* ---------------- EXPLORE MIDDLE SECTION ---------------- */
+    #middlediv {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 100px;
+      padding: 40px 0;
+      gap: 30px;
+    }
+
+    #md1,
+    #md3 {
+      height: 500px;
+      width: 350px;
+      background-size: cover;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #md1 {
+      background-image: url("imagePortrait.adapt.740.medium.jpg");
+    }
+
+    #md3 {
+      background-image: url("imagePortrait.adapt.740.medium (1).webp");
+    }
+
+    #md2 {
+      height: 500px;
+      width: 350px;
+      text-align: center;
+      background-color: rgb(235, 235, 235);
+      border-radius: 15px;
+      padding: 30px;
+    }
+
+    #md2 button {
+      background-color: rgb(198, 47, 47);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    #md2 button:hover {
+      background-color: black;
+    }
+
+    /* ---------------- FOOTER ---------------- */
+    footer {
+      background-color: #111;
+      color: white;
+      padding: 60px 20px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    footer div {
+      width: 250px;
+    }
+
+    footer h3 {
+      color: rgb(198, 47, 47);
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin: 6px 0;
+      cursor: pointer;
+    }
+
+    footer li:hover {
+      color: rgb(198, 47, 47);
+    }
+
+    #copy {
+      text-align: center;
+      background-color: #000;
+      color: white;
+      padding: 10px;
+      font-size: 13px;
+    }
+
+    /* ---------------- MEDIA QUERIES ---------------- */
+    @media (max-width: 1024px) {
+      #divhead h1 {
+        font-size: 55px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #navdiv {
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      #divhead h1 {
+        font-size: 45px;
+      }
+
+      #divhead p {
+        font-size: 14px;
+      }
+
+      #middlediv {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #md1,
+      
+      #md2,
+      #md3 {
+        width: 90%;
+        height: auto;
+      }
+    }
+    #sig{
+      text-decoration: none;
+      color: #ffefef;
+    }
+   #log{
+      text-decoration: none;
+      color: #f1e1e1;
+    }
+
+    @media (max-width: 480px) {
+      #divhead h1 {
+        font-size: 32px;
+      }
+
+      #navdiv {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        gap: 8px;
+      }
+
+      #sl button {
+        padding: 8px 15px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .adventure-card {
+        width: 90%;
+        height: 250px;
+      }
+
+      #md2 h1 {
+        font-size: 22px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      footer div {
+        width: 100%;
+      }
+    }

@@ -1,0 +1,109 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+  position: relative;
+}
+
+/* Dark overlay for readability */
+body::before {
+  content: "";
+  position: absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background-color: rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+/* Form container */
+#main {
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.15); /* Transparent background */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  padding: 40px 35px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 580px;
+  max-width: 90%;
+  color: white;
+}
+
+#main h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+/* Labels and inputs */
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+form input::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+form input:focus {
+  border-color: #ff416c;
+  box-shadow: 0 0 8px rgba(255,65,108,0.5);
+  outline: none;
+  background: rgba(255,255,255,0.25);
+}
+
+/* Submit button */
+form input[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #ff4b2b, #ff416c);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form input[type="submit"]:hover {
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+  #main {
+    width: 95%;
+    padding: 30px 20px;
+  }
+
+  #main h1 {
+    font-size: 24px;
+  }
+}

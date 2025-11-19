@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventure World</title>
+  <link rel="stylesheet" href="home.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+    /* ---------------- Swiper overrides ---------------- */
+    .swiper {
+      width: 100%;
+      padding: 40px 0;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide .adventure-card {
+      width: 300px;
+      height: 350px;
+    }
+
+    @media (max-width: 768px) {
+      .swiper-slide .adventure-card {
+        width: 90%;
+        height: 250px;
+      }
+    }
+
+    .section-title {
+      text-align: center;
+      margin-top: 80px;
+      font-size: 40px;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <section id="mainsec">
+    <div id="maindiv">
+      <nav id="navbar">
+        <h1 id="go">GO Beyond</h1>
+        <div id="navdiv">
+          <p onclick="re()"> home</p>
+          <p onclick="rea()">adventures</p>
+          <p onclick="reac()">booking</p>
+        </div>
+        <div id="sl">
+
+          <button id="sig"><a href="sign.html" id="sig">sign up</a> </button>
+          <button id="log"><a href="login.html" id="log">log in</a></button>
+          <button id="lou"><a href="home.html" id="log" onclick="logout()">log out</a> </button>
+
+
+        </div>
+      </nav>
+
+      <div id="divhead">
+        <h1>Find Your <br> Next Great <br> Adventure</h1>
+        <p>Enjoy thrilling rides, paragliding, water sports, and much more — all in one place.</p>
+        <button onclick="check()">Explore More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- AIR ADVENTURES -->
+  <h2 class="section-title">Air Adventures</h2>
+  <div class="swiper airSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="adventure-card" style="background-image: url('imageHighlightsSrc.adapt.740.medium.webp');">
+          <div class="card-info">
+            <h3>Paragliding</h3>
+            <p>₹500 - ₹1200 | Sky thrills guaranteed</p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="swiper-slide">
+        <div class="adventure-card" style="background-image: url('imageHighlightsSrc.adapt.740.medium.webp');">
+          <div class="card-info">
+            <h3>Paragliding</h3>
+            <p>₹500 - ₹1200 | Sky thrills guaranteed</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="adventure-card" style="background-image: url('imagePortrait.adapt.740.medium.jpg');">
+          <div class="card-info">
+            <h3>Hot Air Balloon</h3>
+            <p>₹800 - ₹1500 | See the sunrise from clouds</p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="swiper-slide">
+        <div class="adventure-card" style="background-image: url('imageHighlightsSrc.adapt.740.medium.webp');">
+          <div class="card-info">
+            <h3>Paragliding</h3>
+            <p>₹500 - ₹1200 | Sky thrills guaranteed</p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="swiper-slide">
+        <div class="adventure-card" style="background-image: url('imagePortrait.adapt.740.medium (1).jpg');">
+          <div class="card-info">
+            <h3>Sky Diving</h3>
+            <p>₹2000 - ₹4000 | Ultimate adrenaline rush</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- LAND ADVENTURES -->
+  <h2 class="section-title">Land Adventures</h2>
+  <div class="swiper landSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="adventure-card"
+          style="background-image: url('IN_Indiana-DDC_1_0225_Indiana-Dunes-National-Park_Web72DPI_000_2000px-1024x684.jpg');">
+          <div class="card-info">
+            <h3>Mountain Trekking</h3>
+            <p>₹300 - ₹800 | Conquer the heights</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="swiper-slide">
+        <div class="adventure-card"
+          style="background-image: url('IN_Indiana-DDC_1_0225_Indiana-Dunes-National-Park_Web72DPI_000_2000px-1024x684.jpg');">
+          <div class="card-info">
+            <h3>Mountain Trekking</h3>
+            <p>₹300 - ₹800 | Conquer the heights</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="swiper-slide">
+        <div class="adventure-card"
+          style="background-image: url('IN_Indiana-DDC_1_0225_Indiana-Dunes-National-Park_Web72DPI_000_2000px-1024x684.jpg');">
+          <div class="card-info">
+            <h3>Mountain Trekking</h3>
+            <p>₹300 - ₹800 | Conquer the heights</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="swiper-slide">
+        <div class="adventure-card"
+          style="background-image: url('IN_Indiana-DDC_1_0225_Indiana-Dunes-National-Park_Web72DPI_000_2000px-1024x684.jpg');">
+          <div class="card-info">
+            <h3>Mountain Trekking</h3>
+            <p>₹300 - ₹800 | Conquer the heights</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="adventure-card"
+          style="background-image: url('IN_Indiana-DDC_1_0225_Indiana-Dunes-National-Park_Web72DPI_000_2000px-1024x684.jpg');">
+          <div class="card-info">
+            <h3>Mountain Trekking</h3>
+            <p>₹300 - ₹800 | Conquer the heights</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="adventure-card"
+          style="background-image: url('IN_Indiana-DDC_1_0225_Indiana-Dunes-National-Park_Web72DPI_000_2000px-1024x684.jpg');">
+          <div class="card-info">
+            <h3>Mountain Trekking</h3>
+            <p>₹300 - ₹800 | Conquer the heights</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="adventure-card"
+          style="background-image: url('HI_Island-of-Hawaii-VB_0225_conservation-500x670.jpg');">
+          <div class="card-info">
+            <h3>Desert Safari</h3>
+            <p>₹700 - ₹1500 | Ride through dunes</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="adventure-card" style="background-image: url('imagePortrait.adapt.740.medium (1).webp');">
+          <div class="card-info">
+            <h3>Camping</h3>
+            <p>₹400 - ₹900 | Night under the stars</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- WATER ADVENTURES -->
+  <h2 class="section-title">Water Adventures</h2>
+  <div class="swiper waterSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="adventure-card" style="background-image: url('imagePortrait.adapt.740.medium.jpg');">
+          <div class="card-info">
+            <h3>River Rafting</h3>
+            <p>₹300 - ₹700 | Splash & speed fun</p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="swiper-slide">
+        <div class="adventure-card" style="background-image: url('imagePortrait.adapt.740.medium.jpg');">
+          <div class="card-info">
+            <h3>River Rafting</h3>
+            <p>₹300 - ₹700 | Splash & speed fun</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="adventure-card"
+          style="background-image: url('IN_Indiana-DDC_1_0225_Indiana-Dunes-National-Park_Web72DPI_000_2000px-1024x684.jpg');">
+          <div class="card-info">
+            <h3>Scuba Diving</h3>
+            <p>₹1500 - ₹3500 | Dive deep into marine life</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="adventure-card"
+          style="background-image: url('IN_Indiana-DDC_1_0225_Indiana-Dunes-National-Park_Web72DPI_000_2000px-1024x684.jpg');">
+          <div class="card-info">
+            <h3>Jet Ski</h3>
+            <p>₹800 - ₹1200 | High-speed waves</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-pagination"></div>
+  </div>
+
+
+
+  <section id="dd">
+    <div id="middlediv">
+      <div id="md1" data-aos="zoom-in-down"></div>
+      <div id="md2">
+        <h1>Explore Adventures <br> by Destination</h1>
+        <p>Find handpicked adventure spots near you. Mountains, beaches, forests, deserts — everything in one guide!</p>
+        <button>Explore Now</button>
+      </div>
+      <div id="md3" data-aos="zoom-in-down"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <h3>About Us</h3>
+      <p>We bring you the most thrilling adventure experiences from across the globe. Discover, explore, and live your
+        dreams.</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <ul>
+        <li>Home</li>
+        <li>Air Adventures</li>
+        <li>Water Fun</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p>Email: info@gobeyond.com</p>
+      <p>Phone: +91 9876543210</p>
+      <p>Location: Manali, India</p>
+    </div>
+  </footer>
+
+  <div id="copy">
+    © 2025 Go Beyond Adventures | All Rights Reserved
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    AOS.init();
+
+    function initSwiper(className) {
+      return new Swiper(className, {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: { el: className + " .swiper-pagination", clickable: true },
+        breakpoints: {
+          0: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 }
+        }
+      });
+    }
+
+    initSwiper(".airSwiper");
+    initSwiper(".landSwiper");
+    initSwiper(".waterSwiper");
+  </script>
+  <script src="home.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+</body>
+
+</html>

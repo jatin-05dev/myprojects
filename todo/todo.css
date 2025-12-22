@@ -1,0 +1,13 @@
+#main{
+    text-align: center;
+}
+body{
+    background-color: aqua;
+}
+#inpu{
+    text-align: center;
+}
+#item{
+    display: flex;
+    justify-content: center;
+}

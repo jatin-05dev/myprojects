@@ -27,7 +27,7 @@
         </div>
 
         {/* RIGHT CIRCLE */}
-        <div className="bg-amber-50 h-100 w-100 rounded-full"></div>
+        <div className="bg-center bg-cover h-100 w-100 rounded-full"style={{ backgroundImage: `url(${"@.jpeg"})` }}></div>
 
       </div>
     </>

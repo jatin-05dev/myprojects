@@ -1,0 +1,92 @@
+ /* --- Original Code starts here --- */
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+body {
+  color: #333;
+  font-family: 'Lato';
+}
+
+.container {
+  padding: 80px 0; /* Padding thodi badha di upar niche se */
+  text-align: center;
+  
+  /* --- GAP FIX: Ye 3 lines add ki hain --- */
+  display: flex;
+  justify-content: center;
+  gap: 80px;      /* Isse charts ke beech mast gap aayega */
+  flex-wrap: wrap; /* Screen choti hone par line change kar lega */
+}
+
+.chart {
+  position: relative;
+  display: inline-block;
+  color: #999;
+  font-size: 20px;
+  text-align: center;
+  /* Chart ka box thoda bada rakha taaki overlap na ho */
+  width: 200px;
+  height: 200px;
+  
+}
+
+.chart figcaption {
+  padding: 50px 25px;
+  width: 100px;
+  height: 50px;
+  border-radius: 100px;
+  line-height: 50px;
+}
+
+/* Logos ko center mein hi rakha hai */
+.chart img {
+  position: absolute;
+  max-width: 60px; /* Thoda chota kiya taaki circle ke andar acha lage */
+  max-height: 60px;
+  background: white;
+}
+
+/* Baaki positions aapki wahi hain */
+.html { top: 70px; left: 70px; }
+.css { top: 70px; left: 70px; }
+.javascript { top: 70px; left: 70px; }
+.node { top: 70px; left: 70px; }
+
+.chart svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.outer {
+  fill: transparent;
+  stroke: #333;
+  stroke-width: 20;
+  stroke-dasharray: 534;
+  transition: stroke-dashoffset 1s;
+  -webkit-animation-play-state: running;
+  /* Firefox fix wahi rakha hai */
+  -moz-transform: rotate(-89deg) translateX(-190px);
+}
+
+/* Colors aur Animations wahi hain */
+.html + svg .outer { stroke: #e34f26; }
+.css + svg .outer { stroke: #0d84ce; }
+.javascript + svg .outer { stroke: #f0e040; }
+.node + svg .outer { stroke: #83cd29; }
+
+.chart:hover .outer {
+  stroke-dashoffset: 534 !important;
+  -webkit-animation-play-state: paused;
+}
+
+/* Initial Animation Values (Same as yours) */
+.chart[data-percent='100'] .outer { stroke-dashoffset: 0; animation: show100 2s; }
+.chart[data-percent='75'] .outer { stroke-dashoffset: 133; animation: show75 2s; }
+.chart[data-percent='50'] .outer { stroke-dashoffset: 267; animation: show50 2s; }
+.chart[data-percent='25'] .outer { stroke-dashoffset: 401; animation: show25 2s; }
+
+/* Keyframes wahi hain */
+@keyframes show100 { from { stroke-dashoffset: 537; } to { stroke-dashoffset: 0; } }
+@keyframes show75 { from { stroke-dashoffset: 537; } to { stroke-dashoffset: 134; } }
+@keyframes show50 { from { stroke-dashoffset: 537; } to { stroke-dashoffset: 267; } }
+@keyframes show25 { from { stroke-dashoffset: 537; } to { stroke-dashoffset: 401; } }
